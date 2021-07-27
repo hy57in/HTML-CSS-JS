@@ -38,7 +38,7 @@
     - `currentMenu`에 현재 클릭된 메뉴를 담는다.
 - [회고]
     - 처음에 변수를 선언할 때 `const`를 쓰니까 제대로 동작이 안되었다. `let`이나 `var`로 고치니 제대로 동작하였다.
-    - 여기서 다시 복습하는 `const` 특징! 변수의 값을 변경할 수 없다. ![변수와 상수 참조](https://ko.javascript.info/variables)
+    - 여기서 다시 복습하는 `const` 특징! 변수의 값을 변경할 수 없다. <a href="https://ko.javascript.info/variables">변수와 상수 참고</a>
 
 #### After refactoring (event 위임 활용)
 ```javascript

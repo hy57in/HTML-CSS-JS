@@ -13,6 +13,7 @@
       }
       .menu {
         display: flex;
+        background: green;
       }
       .menu-link {
         margin: 0.1em;
@@ -35,22 +36,18 @@
       <a href="#" class="menu-link" data-menu="3">menu 3</a>
     </nav>
     <script>
-      // 현재 활성화된 메뉴를 담을 변수
       let currentMenu;
-      let menuLinks = document.querySelectorAll(".menu-link");
+      let menu = document.querySelector(".menu");
 
-      function clickMenuHandeler() {
+      function clickMenuHandeler(e) {
         if (currentMenu) {
           currentMenu.classList.remove("menu-active");
         }
-        this.classList.add("menu-active");
-        currentMenu = this;
+        e.target.classList.add("menu-active");
+        currentMenu = e.target;
         console.log(currentMenu);
       }
-      for (let i = 0; i < menuLinks.length; i++) {
-        menuLinks[i].addEventListener("click", clickMenuHandeler);
-      }
-      //console.log(menuLinks);
+      menu.addEventListener("click", clickMenuHandeler);
     </script>
   </body>
 </html>

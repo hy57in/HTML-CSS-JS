@@ -39,13 +39,21 @@
       let currentMenu;
       let menu = document.querySelector(".menu");
 
+      function activate(element) {
+        element.classList.add("menu-active");
+        currentMenu = element;
+      }
+
+      function inactivate() {
+        currentMenu.classList.remove("menu-active");
+      }
+
       function clickMenuHandeler(e) {
         if (currentMenu) {
-          currentMenu.classList.remove("menu-active");
+          inactivate();
         }
-        e.target.classList.add("menu-active");
-        currentMenu = e.target;
-        console.log(currentMenu);
+
+        activate(e.target);
       }
       menu.addEventListener("click", clickMenuHandeler);
     </script>

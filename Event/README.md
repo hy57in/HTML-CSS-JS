@@ -3,6 +3,7 @@
 ## 클릭한 메뉴버튼의 색깔이 바뀌게 해보자!
 
 ### Code
+#### Before
 ```javascript
 <body>
     <h1 id="main-title">Event</h1>
@@ -38,6 +39,26 @@
 - [회고]
     - 처음에 변수를 선언할 때 `const`를 쓰니까 제대로 동작이 안되었다. `let`이나 `var`로 고치니 제대로 동작하였다.
     - 여기서 다시 복습하는 `const` 특징! 변수의 값을 변경할 수 없다. ![변수와 상수 참조](https://ko.javascript.info/variables)
+
+#### After refactoring (event 위임 활용)
+```javascript
+let currentMenu;
+let menu = document.querySelector(".menu");
+
+function clickMenuHandeler(e) {
+if (currentMenu) {
+  currentMenu.classList.remove("menu-active");
+}
+e.target.classList.add("menu-active");
+currentMenu = e.target;
+console.log(currentMenu);
+}
+menu.addEventListener("click", clickMenuHandeler);
+```
+- [설명]
+    - for문을 쓰지 않고 `e.target`을 활용함
+    - `e.currentTarget`은 `this`와 같은 역할.
+   
 ### CSS
 ```javascript
 <style>

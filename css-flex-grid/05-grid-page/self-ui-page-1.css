@@ -96,11 +96,12 @@
   }
   @media (min-width: 1400px) {
     .primary {
-      width: calc(100% - 600px);
-      /* flex: 1; */
-    }
-    .secondary {
-      width: 300px;
+      grid-template-columns: 300px 1fr 300px;
     }
   }
   
+  @media (max-width: 480px) {
+      .page header {
+          font-size: 0.8rem;
+      }
+  }
